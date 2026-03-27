@@ -206,6 +206,39 @@ class KiteConnectTest extends TestCase
 
     /** 
      * @depends initializeMock
+     * @test placeOrder with market_protection
+    */
+    public function placeOrderWithMarketProtectionTest($kiteConnect): void
+    {
+        $response = $kiteConnect->placeOrder("regular", [
+            "tradingsymbol" => "INFY",
+            "exchange" => "NSE",
+            "quantity" => 1,
+            "transaction_type" => "BUY",
+            "order_type" => "MARKET",
+            "product" => "NRML",
+            "market_protection" => KiteConnect::MARKET_PROTECTION_AUTO
+        ]);
+
+        $this->assertObjectHasProperty('order_id', $response);
+    }
+
+    /** 
+     * @depends initializeMock
+     * @test modifyOrder with market_protection
+    */
+    public function modifyOrderWithMarketProtectionTest($kiteConnect): void
+    {
+        $response = $kiteConnect->modifyOrder("regular", "123456789", [
+            "price" => 10,
+            "market_protection" => KiteConnect::MARKET_PROTECTION_AUTO
+        ]);
+
+        $this->assertObjectHasProperty('order_id', $response);
+    }
+
+    /** 
+     * @depends initializeMock
      * @test getOrders 
     */
     public function getOrdersTest($kiteConnect): void

@@ -121,7 +121,10 @@ class KiteConnect
     public const POSITION_TYPE_DAY = "day";
     public const POSITION_TYPE_OVERNIGHT = "overnight";
 
-    public const VERSION = "3.2.0";
+    // Market protection
+    public const MARKET_PROTECTION_AUTO = -1;
+
+    public const VERSION = "5.1.0";
 
     // Kite connect header version
     private $kiteVersion = "3";
@@ -465,6 +468,7 @@ class KiteConnect
      *                $params int|null "auction_number" A unique identifier for a particular auction
      *                $params float|null  "tag" (Optional) Order tag
      *                $params string|null "validity" (Optional) Order validity (DAY, IOC).
+     *                $params float    "market_protection" Set to -1 for system-default market protection, or a percentage value greater than 0 up to 100
      * @return mixed|null
      * @throws DataException
      * @throws GeneralException
@@ -494,6 +498,7 @@ class KiteConnect
      *                $params float|null  "price" (Optional) Order Price
      *                $params float|null  "trigger_price" (Optional) Trigger price
      *                $params string|null "validity" (Optional) Order validity (DAY, IOC).
+     *                $params float|null    "market_protection" (Optional) Set to -1 for system-default market protection, or a percentage value greater than 0 up to 100
      *
      * @return mixed
      * @throws DataException

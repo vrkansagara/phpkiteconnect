@@ -2,6 +2,11 @@
 
 All notable changes to `phpkiteconnect` will be documented in this file.
 
+## 5.1.0 - 2026-03-27
+- Added `MARKET_PROTECTION_AUTO` constant (`-1`) for system-default market protection
+- Added `market_protection` parameter support for `placeOrder` and `modifyOrder`
+- Added tests for `placeOrder` and `modifyOrder` with `market_protection`
+
 ## 4.0.0 - 2021-04-06
 - Major refactor to project structure and code
 - PHP support 7.3+

@@ -26,6 +26,8 @@ class MockJson
         $response_array[] = new Response($status_code, $header_content, $this->fetchMock("holdings.json"));
         $response_array[] = new Response($status_code, $header_content, $this->fetchMock("positions.json"));
         $response_array[] = new Response($status_code, $header_content, $this->fetchMock("order_response.json"));
+        $response_array[] = new Response($status_code, $header_content, $this->fetchMock("order_response.json"));
+        $response_array[] = new Response($status_code, $header_content, $this->fetchMock("order_modify.json"));
         $response_array[] = new Response($status_code, $header_content, $this->fetchMock("orders.json"));
         $response_array[] = new Response($status_code, $header_content, $this->fetchMock("order_info.json"));
         $response_array[] = new Response($status_code, $header_content, $this->fetchMock("order_trades.json"));

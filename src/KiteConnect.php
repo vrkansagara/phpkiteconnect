@@ -1606,7 +1606,7 @@ class KiteConnect
         $records = [];
         $head = [];
         for ($count = 0; $count < count($lines); $count++) {
-            $colums = str_getcsv($lines[$count]);
+            $colums = str_getcsv($lines[$count], ",", "\"", "\\");
             if ($colums) {
                 if (count($colums) < 5) {
                     //why this condition is necessary ?
@@ -1653,7 +1653,7 @@ class KiteConnect
         $records = [];
         $head = [];
         for ($n = 0; $n < count($lines); $n++) {
-            if ($cols = @str_getcsv($lines[$n])) {
+            if ($cols = @str_getcsv($lines[$n], ",", "\"", "\\")) {
                 if (count($cols) < 5) {
                     continue;
                 }

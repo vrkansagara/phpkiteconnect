@@ -236,11 +236,11 @@ class KiteConnect
      */
     public function __construct(
         string $apiKey,
-        string $accessToken = null,
-        string $root = null,
+        ?string $accessToken = null,
+        ?string $root = null,
         bool $debug = false,
         int $timeout = 7,
-        \GuzzleHttp\Client $guzzleClient = null
+        ?\GuzzleHttp\Client $guzzleClient = null
     ) {
         $this->apiKey = $apiKey;
         $this->accessToken = $accessToken;

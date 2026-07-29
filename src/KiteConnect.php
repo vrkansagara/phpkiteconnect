@@ -1575,11 +1575,15 @@ class KiteConnect
         }
         try {
             $response = $client->request($method, $url, $body_array);
-        } catch(RequestException $e){
+        } catch (RequestException $e) {
             // fetch all error response field
             $response = $e->getResponse();
+
+            if ($response === null) {
+                throw new NetworkException($e->getMessage(), 0, $e);
+            }
         }
-            
+
         $result = $response->getBody()->getContents();
 
         $response_headers = $response->getHeaders();

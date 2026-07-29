@@ -534,7 +534,7 @@ class KiteConnect
      * @throws PermissionException
      * @throws TokenException
      */
-    public function cancelOrder(string $variety, string $orderId, array $params = null)
+    public function cancelOrder(string $variety, string $orderId, ?array $params = null)
     {
         if (! $params) {
             $params = [];
